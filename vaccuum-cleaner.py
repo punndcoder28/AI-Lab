@@ -1,8 +1,12 @@
+import random
+
 print("Available Status: Dirty, Clean")
 left = input("Left Status: ")
 right = input("Right Status: ")
 
-env = [left, right]
+env = [None, None]
+env[0] = random.choice(['Dirty', 'Clean'])
+env[1] = random.choice(['Dirty', 'Clean'])
 
 pos = int(input("Position (L=0 or R=1): "))
 
@@ -19,6 +23,8 @@ def clean():
         return 'Left'
 
 while "Dirty" in env:
+    env[0] = random.choice(['Dirty', 'Clean'])
+    env[1] = random.choice(['Dirty', 'Clean'])
     print(clean())
 else:
     print(env)
